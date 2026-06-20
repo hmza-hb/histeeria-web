@@ -1,0 +1,1015 @@
+/* ==========================================================================
+   DESIGN SYSTEM, TOKENS & UTILITIES
+   ========================================================================== */
+:root {
+    /* Color Palette Archetypes */
+    --color-navy: #2D3561;
+    --color-ivory: #F5F5F0;
+    --color-gold: #C9A84C;
+    --color-void: #0A0A0F;
+    --color-text-dark: #1E2238;
+    --color-text-muted: #6E7594;
+    --color-border: rgba(45, 53, 97, 0.08);
+
+    /* Typography Matrix */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Layout Ecosystem */
+    --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   GLOBAL RESET & BASICS
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-ivory);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    width: 100%;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY ARCHITECTURE
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--color-navy);
+    letter-spacing: -0.01em;
+}
+
+.section-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   INTERACTIVE COMPONENTS & BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 1rem 2.2rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform var(--transition-fast),
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-navy {
+    background-color: var(--color-navy);
+    color: var(--color-ivory);
+    box-shadow: 0 4px 12px rgba(45, 53, 97, 0.15);
+}
+
+.btn-navy:hover {
+    background-color: var(--color-void);
+    box-shadow: 0 6px 20px rgba(10, 10, 15, 0.25);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid rgba(45, 53, 97, 0.3);
+    color: var(--color-navy);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-navy);
+    background-color: var(--color-navy);
+    color: var(--color-ivory);
+    box-shadow: 0 6px 16px rgba(45, 53, 97, 0.1);
+}
+
+.btn-black {
+    background-color: var(--color-void);
+    color: var(--color-ivory);
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
+}
+
+/* ==========================================================================
+   NAVIGATION DESKTOP LAYER
+   ========================================================================== */
+header {
+    background-color: rgba(245, 245, 240, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.8rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(45, 53, 97, 0.06);
+    transition: background-color var(--transition-smooth), padding var(--transition-smooth);
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Institutional Logo Branding Layout */
+.brand-block {
+    display: flex;
+    align-items: center;
+    gap: 0.95rem;
+    text-decoration: none;
+}
+
+.brand-logo-container {
+    width: 38px;
+    height: 42px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.brand-logo-img {
+    height: 105%;
+    width: auto;
+    transform: translateY(-2%);
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.brand-text h3 {
+    font-size: 1.35rem;
+    letter-spacing: 0.03em;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-navy);
+    margin: 0;
+    padding: 0;
+}
+
+.brand-text span {
+    font-size: 0.68rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #6B7280;
+    display: block;
+    margin-top: 0.1rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-navy);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+nav a:hover {
+    color: var(--color-gold);
+}
+
+/* ==========================================================================
+   MOBILE SIDEBAR CANVAS OVERLAY & INTERACTIVE HAMBURGER CLOSURE
+   ========================================================================== */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1200;
+    /* Elevated above the mobile-sidebar layer (1050) */
+    transition: top var(--transition-smooth), right var(--transition-smooth);
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-navy);
+    border-radius: 2px;
+    transition: transform var(--transition-smooth),
+        opacity var(--transition-smooth),
+        background-color var(--transition-smooth);
+    transform-origin: center;
+}
+
+/* Fixed positioning state toggle for viewport anchoring when layout shifts */
+.hamburger-menu.open {
+    position: fixed;
+    top: 1.6rem;
+    right: 2.5rem;
+}
+
+/* Animated Hamburger to Close Cross-State Transformations */
+.hamburger-menu.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background-color: var(--color-navy);
+    /* High contrast cross on white sidebar */
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background-color: var(--color-navy);
+}
+
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.05);
+    z-index: 1050;
+    /* Placed safely underneath the cross-toggle element */
+    padding: 7rem 2.5rem 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: right var(--transition-smooth);
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+.mobile-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.mobile-sidebar-nav a {
+    text-decoration: none;
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    transition: color var(--transition-fast);
+}
+
+.mobile-sidebar-nav a:hover {
+    color: var(--color-gold);
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 10, 15, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1040;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ==========================================================================
+   HERO DISPLAY BLOCK
+   ========================================================================== */
+.hero-section {
+    padding: 15rem 0 6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    color: var(--color-navy);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    max-width: 680px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-statement {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: var(--color-navy);
+    margin-bottom: 3.5rem;
+    font-weight: 600;
+    max-width: 800px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   CORE LAYOUT STACKS & AGENT GRAPH BLOCK MODULES
+   ========================================================================== */
+.section-intro-grid {
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 5rem;
+    padding: 6rem 0 4rem 0;
+}
+
+.section-intro-grid h2 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+}
+
+.section-intro-grid p {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    margin-top: 1rem;
+}
+
+/* Grid Matrix Decks */
+.stack-quad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+.clean-card {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 2.2rem;
+}
+
+.clean-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.clean-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* Agent Metric Cards */
+.agent-plate {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+}
+
+.plate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1.5rem;
+}
+
+.plate-title label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+}
+
+.plate-title h4 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    margin-top: 0.25rem;
+}
+
+.plate-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    padding: 0.3rem 0.6rem;
+    text-transform: uppercase;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(45, 53, 97, 0.04);
+    font-size: 0.95rem;
+}
+
+.metric-row span:first-child {
+    color: var(--color-navy);
+    font-weight: 400;
+}
+
+.metric-row span:last-child {
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+.plate-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+}
+
+/* Asymmetric Typographic Grid Split Rows */
+.split-quote-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    border-top: 1px solid var(--color-border);
+    padding: 4rem 0 6rem 0;
+    align-items: baseline;
+}
+
+.asymmetric-quote {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    line-height: 1.3;
+    color: var(--color-navy);
+    text-align: right;
+}
+
+/* Methodology Comparison Split Architecture */
+.comparison-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.method-card {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 3rem;
+}
+
+.method-card.shaded {
+    background: #EAEAEA;
+    border: none;
+}
+
+.method-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.method-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.method-card li {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+/* Ribbon Accent Stripe */
+.banner-ribbon {
+    background-color: var(--color-navy);
+    color: var(--color-ivory);
+    padding: 2rem 0;
+    margin: 4rem 0;
+}
+
+.ribbon-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ribbon-flex span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+}
+
+.ribbon-flex h3 {
+    color: var(--color-ivory);
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+/* Redesigned Education / Benchmarks Card Deck */
+.benchmark-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-bottom: 7rem;
+}
+
+.num-card {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-navy);
+    padding: 2.5rem 2.2rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform var(--transition-smooth),
+        box-shadow var(--transition-smooth),
+        border-left-color var(--transition-fast);
+}
+
+.num-card:hover {
+    transform: translateY(-4px);
+    border-left-color: var(--color-gold);
+    box-shadow: 0 12px 30px rgba(45, 53, 97, 0.05);
+}
+
+.num-card .card-index {
+    font-family: var(--font-mono);
+    color: var(--color-gold);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.num-card h4 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.num-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* Closed Loop Execution Nodes Flow Layout */
+.loop-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 0.75rem;
+    margin-bottom: 8rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.loop-node {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.loop-content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 2;
+}
+
+.loop-content-box .step-number {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.loop-content-box .step-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-navy);
+}
+
+.loop-node:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid rgba(45, 53, 97, 0.15);
+    border-right: 2px solid rgba(45, 53, 97, 0.15);
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 3;
+    background: #FFFFFF;
+    transition: border-color var(--transition-fast);
+}
+
+.loop-node.highlight {
+    background-color: var(--color-navy);
+}
+
+.loop-node.highlight:not(:last-child)::after {
+    background: var(--color-navy);
+    border-top: 2px solid var(--color-gold);
+    border-right: 2px solid var(--color-gold);
+}
+
+.loop-node.highlight .step-number {
+    color: var(--color-gold);
+}
+
+.loop-node.highlight .step-title {
+    color: var(--color-ivory);
+}
+
+/* ==========================================================================
+   ENTERPRISE INSTITUTIONAL SITE FOOTER
+   ========================================================================= */
+.site-footer {
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--color-border);
+    padding: 6rem 0 3rem 0;
+    font-family: var(--font-sans);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.footer-brand-column h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.footer-brand-column p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 320px;
+}
+
+.footer-column h5 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-navy);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-navy);
+}
+
+/* Bottom Compliance Status Row */
+.footer-meta-bar {
+    border-top: 1px solid var(--color-border);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.meta-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.copyright-text {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.legal-links a {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.legal-links a:hover {
+    color: var(--color-navy);
+}
+
+/* Minimalist Inline Vector Social Matrix Blocks */
+.footer-social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.footer-social-wrapper span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+.social-links-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.social-icon-link {
+    color: var(--color-text-muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+    text-decoration: none;
+}
+
+.social-icon-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.social-icon-link:hover {
+    color: var(--color-navy);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   FLUID MULTI-SCREEN RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet & Smaller Workspace Viewport Layer (Under 1024px) */
+@media (max-width: 1024px) {
+    .stack-quad {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium Landscape Layout Breakpoints (Under 992px) */
+@media (max-width: 992px) {
+    header {
+        padding: 1rem 0;
+    }
+
+    nav,
+    header .btn-black,
+    header .btn {
+        display: none;
+        /* Safely moves standard header anchors away */
+    }
+
+    .hamburger-menu {
+        display: flex;
+        /* Unlocks interactive canvas trigger */
+    }
+
+    .section-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 4rem 0 2rem 0;
+    }
+
+    .section-intro-grid h2 {
+        font-size: 2.5rem;
+    }
+
+    .benchmark-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .loop-container {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .loop-node {
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .loop-node:not(:last-child)::after {
+        right: 50%;
+        bottom: -10px;
+        top: auto;
+        transform: translateX(50%) rotate(135deg);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Mobile Architecture Structural Adaptations (Under 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .hero-section {
+        padding: 12rem 0 4rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.6rem;
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-statement {
+        font-size: 1.35rem;
+        line-height: 1.4;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .split-quote-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+
+    .asymmetric-quote {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    .comparison-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .method-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .ribbon-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .ribbon-flex h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Clamped Display Breakpoint Rules for Micro-Screens (Under 576px) */
+@media (max-width: 576px) {
+    .stack-quad {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .clean-card {
+        padding: 1.75rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-meta-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .footer-social-wrapper {
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+}
