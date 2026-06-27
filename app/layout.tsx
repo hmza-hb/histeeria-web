@@ -1,6 +1,19 @@
 import React from "react"
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
+import { JsonLd } from "@/components/seo/json-ld"
+import {
+  KEYWORDS,
+  LEGAL_NAME,
+  OG_IMAGE,
+  organizationSchema,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  softwareApplicationSchema,
+  TAGLINE,
+  websiteSchema,
+} from "@/lib/seo"
 import './globals.css'
 
 const instrumentSans = Instrument_Sans({ 
@@ -20,22 +33,26 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Histeeria - The Reliability Layer for Production AI Agents",
-  description: "Monitor, evaluate, alert, and improve your AI agents from one command center. Catch mistakes, measure judgment, and build agents you can trust.",
-  keywords: [
-    "AI agents",
-    "agent monitoring",
-    "agent evaluation",
-    "AI safety",
-    "hallucination detection",
-    "adversarial stress testing",
-    "agent debugging",
-    "production AI",
-    "machine judgment",
-    "LLM security"
-  ],
-  authors: [{ name: "Histeeria" }],
-  creator: "Histeeria Inc.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — ${TAGLINE}`,
+    template: `%s · ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: KEYWORDS,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: LEGAL_NAME,
+  publisher: LEGAL_NAME,
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -44,26 +61,45 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://histeeria.com",
-    title: "Histeeria - The Reliability Layer for Production AI Agents",
-    description: "Monitor, evaluate, alert, and improve your AI agents from one command center. Catch mistakes, measure judgment, and build agents you can trust.",
-    siteName: "Histeeria",
+    url: SITE_URL,
+    title: `${SITE_NAME} — ${TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
     images: [
       {
-        url: "/assets/logo-light.png",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Histeeria Logo",
+        alt: "Histeeria — The Reliability Layer for Production AI Agents",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Histeeria - The Reliability Layer for Production AI Agents",
-    description: "Monitor, evaluate, alert, and improve your AI agents from one command center. Catch mistakes, measure judgment, and build agents you can trust.",
-    images: ["/assets/logo-light.png"],
+    title: `${SITE_NAME} — ${TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
     creator: "@histeeria",
+    site: "@histeeria",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -73,6 +109,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <JsonLd id="schema-organization" data={organizationSchema} />
+        <JsonLd id="schema-website" data={websiteSchema} />
+        <JsonLd id="schema-software" data={softwareApplicationSchema} />
+      </head>
       <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
       </body>

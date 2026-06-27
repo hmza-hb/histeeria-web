@@ -1,26 +1,34 @@
 import type { MetadataRoute } from "next";
 
+import { SITE_URL } from "@/lib/seo";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = "https://histeeria.com";
+  const now = new Date();
 
   return [
     {
-      url: siteUrl,
-      lastModified: new Date(),
+      url: SITE_URL,
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${siteUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
+      url: `${SITE_URL}/platform`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
-      url: `${siteUrl}/terms`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/privacy`,
+      lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.5,
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_URL}/terms`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.4,
     },
   ];
 }

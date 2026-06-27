@@ -2,14 +2,31 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { FooterSection } from "@/components/landing/footer-section";
 import { Navigation } from "@/components/landing/navigation";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Platform | Histeeria",
+  title: "Platform — Monitor, Evaluate & Improve AI Agents",
   description:
-    "Explore the Histeeria platform for judgment monitoring, evaluations, agent profiles, alerts, analytics, SDKs, APIs, and agent integrations.",
+    "Explore the Histeeria platform: judgment monitoring, an eight-dimension evaluation engine, agent profiles, alerts and webhooks, analytics, SDKs for JavaScript and Python, a REST API, and integrations for OpenAI, Anthropic, LangChain, and more.",
   alternates: {
-    canonical: "https://histeeria.com/platform",
+    canonical: "/platform",
   },
+  openGraph: {
+    type: "website",
+    url: "https://histeeria.com/platform",
+    title: "Histeeria Platform — Monitor, Evaluate & Improve AI Agents",
+    description:
+      "Judgment monitoring, an eight-dimension evaluation engine, agent profiles, alerts, analytics, SDKs, and integrations for production AI agents.",
+  },
+};
+
+const platformBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://histeeria.com" },
+    { "@type": "ListItem", position: 2, name: "Platform", item: "https://histeeria.com/platform" },
+  ],
 };
 
 const platformFeatures = [
@@ -98,6 +115,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
 export default function PlatformPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-black text-white">
+      <JsonLd id="schema-platform-breadcrumb" data={platformBreadcrumb} />
       <Navigation />
 
       <section className="relative min-h-screen overflow-hidden pt-32">
