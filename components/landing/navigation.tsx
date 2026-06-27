@@ -44,7 +44,7 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group shrink-0">
+          <a href="/" className="flex items-center gap-2.5 group shrink-0">
             <img 
               src="/assets/logo-dark.png" 
               alt="Histeeria Logo" 
