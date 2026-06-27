@@ -229,8 +229,7 @@ export function MetricsSection() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const baseUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-        const res = await fetch(`${baseUrl}/v1/public/stats`);
+        const res = await fetch("/api/public/stats");
         if (res.ok) {
           const data = await res.json();
           setMetricsData([
@@ -261,8 +260,8 @@ export function MetricsSection() {
             },
           ]);
         }
-      } catch (err) {
-        console.error("Failed to fetch real-time stats", err);
+      } catch {
+        // Keep baseline metrics when stats are unavailable.
       }
     };
     
