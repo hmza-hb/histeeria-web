@@ -26,6 +26,7 @@ OpenAI, Anthropic, LangChain, LlamaIndex, CrewAI, AutoGen, and custom agents via
 - Platform overview: https://histeeria.com/platform
 - Application (sign up / sign in): https://app.histeeria.com
 - Documentation: https://docs.histeeria.com
+- Documentation index (AI crawlers): https://docs.histeeria.com/llms-full.txt
 - Privacy Policy: https://histeeria.com/privacy
 - Terms of Service: https://histeeria.com/terms
 

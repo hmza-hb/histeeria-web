@@ -7,8 +7,8 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { name: "Platform", href: "/platform" },
   { name: "Docs", href: "https://docs.histeeria.com", external: true },
-  { name: "Pricing", href: "#pricing" },
   { name: "Blog", href: "/blog" },
+  { name: "Changelog", href: "/changelog" },
 ];
 
 export function Navigation() {
