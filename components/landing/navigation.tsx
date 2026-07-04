@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Platform", href: "/platform" },
-  { name: "Docs", href: "https://docs.histeeria.com", external: true },
+  { name: "Docs", href: "/docs" },
   { name: "Blog", href: "/blog" },
   { name: "Changelog", href: "/changelog" },
 ];
@@ -86,7 +86,7 @@ export function Navigation() {
                   : "bg-white text-black hover:bg-white/90 px-6 h-10 text-sm"
               }`}
             >
-              <a href="https://app.histeeria.com">
+              <a href="/get-started">
                 Get started
               </a>
             </Button>
@@ -150,7 +150,7 @@ export function Navigation() {
               className="w-full bg-white text-black hover:bg-white/90 rounded-full h-14 text-base cursor-pointer font-bold"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <a href="https://app.histeeria.com">
+              <a href="/get-started">
                 Get started
               </a>
             </Button>

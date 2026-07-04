@@ -4,30 +4,25 @@ export const DOCS_URL = "https://docs.histeeria.com";
 
 export const SITE_NAME = "Histeeria";
 export const LEGAL_NAME = "Histeeria Inc.";
-export const TAGLINE = "The Reliability Layer for Production AI Agents";
+export const TAGLINE = "Monitor and evaluate AI agents";
 
 export const SITE_DESCRIPTION =
-  "Histeeria is the reliability layer for production AI agents. Monitor agent decisions in real time, evaluate judgment across eight dimensions, get alerts on mistakes, and improve agents before they fail in front of users.";
+  "Histeeria helps teams monitor AI agent decisions, run evaluations, send alerts, and review agent performance. JavaScript and Python SDKs plus a REST API.";
 
 export const SHORT_DESCRIPTION =
-  "Monitor, evaluate, alert, and improve your AI agents from one command center.";
+  "Monitor AI agent decisions, run evaluations, and send alerts from one workspace.";
 
 export const KEYWORDS = [
   "Histeeria",
+  "histeeria.com",
   "AI agent monitoring",
   "AI agent evaluation",
-  "agent reliability platform",
-  "AI agent observability",
+  "agent observability",
   "LLM monitoring",
-  "agent judgment",
-  "hallucination detection",
-  "AI agent alerts",
-  "agent guardrails",
-  "machine judgment",
-  "production AI agents",
-  "AI safety platform",
+  "agent alerts",
   "agent analytics",
-  "agent profiles",
+  "AI agent SDK",
+  "agent API",
 ];
 
 export const SOCIAL_LINKS = {
@@ -36,19 +31,26 @@ export const SOCIAL_LINKS = {
   instagram: "https://instagram.com/histeeria.imj",
 };
 
-export const OG_IMAGE = "/assets/logo-light.png";
-export const LOGO = `${SITE_URL}/assets/logo-dark.png`;
+/** Square brand mark for light backgrounds (Google, Open Graph, schema). */
+export const LOGO_MARK = "/assets/logo-mark.png";
+export const LOGO = `${SITE_URL}${LOGO_MARK}`;
+export const OG_IMAGE = "/assets/og.png";
 
-/**
- * Organization schema — primary signal for the Google Knowledge Graph.
- */
+/** Primary site navigation — signals Google sitelinks. */
+export const PRIMARY_NAV = [
+  { name: "Platform", href: `${SITE_URL}/platform`, path: "/platform" },
+  { name: "Docs", href: `${SITE_URL}/docs`, path: "/docs" },
+  { name: "Get started", href: `${SITE_URL}/get-started`, path: "/get-started" },
+  { name: "Changelog", href: `${SITE_URL}/changelog`, path: "/changelog" },
+  { name: "Blog", href: `${SITE_URL}/blog`, path: "/blog" },
+] as const;
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   legalName: LEGAL_NAME,
-  alternateName: "Histeeria Institute of Machine Judgment",
   url: SITE_URL,
   logo: {
     "@type": "ImageObject",
@@ -58,23 +60,19 @@ export const organizationSchema = {
   },
   image: LOGO,
   description: SITE_DESCRIPTION,
+  disambiguatingDescription:
+    "Histeeria (histeeria.com) is a software company that builds tools to monitor and evaluate AI agents. It is not related to the medical term hysteria.",
   email: "legal@histeeria.com",
   foundingDate: "2025",
-  slogan: TAGLINE,
   sameAs: [SOCIAL_LINKS.github, SOCIAL_LINKS.linkedin, SOCIAL_LINKS.instagram],
   knowsAbout: [
-    "AI agent reliability",
-    "AI agent evaluation",
     "AI agent monitoring",
-    "Machine judgment",
+    "AI agent evaluation",
     "LLM observability",
-    "AI safety",
+    "Software development tools",
   ],
 };
 
-/**
- * WebSite schema — enables sitelinks search box and ties pages to the brand.
- */
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -86,34 +84,43 @@ export const websiteSchema = {
   inLanguage: "en-US",
 };
 
-/**
- * SoftwareApplication schema — describes the product itself to search + AI.
- */
+export const siteNavigationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${SITE_URL}/#sitenav`,
+  name: "Histeeria site navigation",
+  itemListElement: PRIMARY_NAV.map((item, index) => ({
+    "@type": "SiteNavigationElement",
+    position: index + 1,
+    name: item.name,
+    url: item.href,
+  })),
+};
+
 export const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": `${SITE_URL}/#software`,
   name: SITE_NAME,
   applicationCategory: "DeveloperApplication",
-  applicationSubCategory: "AI Agent Reliability Platform",
   operatingSystem: "Web",
   url: SITE_URL,
   downloadUrl: APP_URL,
   description: SITE_DESCRIPTION,
   publisher: { "@id": `${SITE_URL}/#organization` },
   featureList: [
-    "Real-time judgment monitoring",
-    "Evaluation engine across eight dimensions",
+    "Real-time agent decision monitoring",
+    "Multi-dimension evaluation",
     "Public and private agent profiles",
     "Alerts and webhooks",
     "Analytics dashboard",
-    "JavaScript, Python, and REST integrations",
+    "JavaScript, Python, and REST API integrations",
   ],
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "Start free with one production agent.",
+    description: "Free tier with one production agent.",
   },
 };
 
@@ -127,15 +134,15 @@ export const faqSchema = {
       name: "What is Histeeria?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Histeeria is the reliability layer for production AI agents. It lets teams monitor agent decisions in real time, evaluate judgment across eight dimensions, receive alerts on mistakes, and improve agents before they fail in front of users.",
+        text: "Histeeria is software for monitoring and evaluating AI agents. Teams use it to review agent decisions, run evaluations, send alerts, and track performance over time.",
       },
     },
     {
       "@type": "Question",
-      name: "What does Histeeria do for AI agents?",
+      name: "Is Histeeria the same as hysteria?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Histeeria monitors agent behavior, scores decision quality, surfaces incidents and hallucinations, sends alerts through Slack and webhooks, and provides analytics and public agent profiles so teams can trust and improve their agents.",
+        text: "No. Histeeria (histeeria.com) is a technology company. The name is spelled H-i-s-t-e-e-r-i-a and is not related to the medical term hysteria.",
       },
     },
     {
@@ -143,7 +150,7 @@ export const faqSchema = {
       name: "Which agent frameworks does Histeeria support?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Histeeria integrates with OpenAI, Anthropic, LangChain, LlamaIndex, CrewAI, AutoGen, and custom agents through JavaScript/TypeScript and Python SDKs and a REST API.",
+        text: "Histeeria integrates with OpenAI, Anthropic, LangChain, LlamaIndex, CrewAI, AutoGen, and custom agents through JavaScript, Python SDKs, and a REST API.",
       },
     },
     {
@@ -151,7 +158,7 @@ export const faqSchema = {
       name: "How do I get started with Histeeria?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Create a free account at app.histeeria.com, connect an agent with the SDK or REST API, and send your first decision to see it evaluated inside your Histeeria workspace.",
+        text: "Create a free account at app.histeeria.com, connect an agent with the SDK or REST API, and send your first decision to see it in your workspace.",
       },
     },
   ],

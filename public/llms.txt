@@ -1,20 +1,20 @@
 # Histeeria
 
-> Histeeria is the reliability layer for production AI agents. Teams use Histeeria to monitor agent decisions in real time, evaluate judgment across eight dimensions, get alerts on mistakes, and improve agents before they fail in front of users.
+> Histeeria (histeeria.com) is software for monitoring and evaluating AI agents. Teams use it to review agent decisions, run evaluations, send alerts, and track performance over time. Histeeria is not related to the medical term hysteria.
 
-Histeeria Inc. operates under the name "Histeeria — Institute of Machine Judgment". The product is a web application that connects to AI agents through SDKs (JavaScript/TypeScript, Python) and a REST API.
+Histeeria Inc. builds a web application that connects to AI agents through JavaScript/TypeScript SDKs, a Python SDK, and a REST API.
 
 ## What Histeeria does
 
-- **Judgment Monitoring**: Watch agent decisions as they happen — inputs, reasoning, outputs, tool calls, and whether actions stayed inside policy.
-- **Evaluation Engine**: Score agent behavior across eight judgment dimensions with evidence-backed failures instead of vague pass/fail labels.
-- **Agent Profiles**: Public and private profiles that summarize an agent's judgment, analytics, and builder information.
-- **Alerts & Webhooks**: Real-time notifications (Slack, webhooks) when judgment drops or incidents occur.
-- **Analytics Dashboard**: Trends in decision quality, incidents caught, and safe-completion rate over time.
+- **Monitoring**: Watch agent decisions as they happen, including inputs, outputs, tool calls, and policy checks.
+- **Evaluations**: Score agent behavior across multiple dimensions with evidence-backed results.
+- **Agent profiles**: Public and private profiles that summarize an agent's performance and builder information.
+- **Alerts and webhooks**: Notifications when scores drop or incidents occur.
+- **Analytics**: Trends in decision quality, incidents, and completion rates over time.
 
 ## Who it is for
 
-Developers, AI startups, dev studios, and enterprise teams that build or operate AI agents and need to trust, audit, and improve them in production.
+Developers, AI startups, and teams that build or operate AI agents and need to monitor and improve them in production.
 
 ## Supported integrations
 
@@ -23,9 +23,13 @@ OpenAI, Anthropic, LangChain, LlamaIndex, CrewAI, AutoGen, and custom agents via
 ## Key links
 
 - Home: https://histeeria.com
-- Platform overview: https://histeeria.com/platform
-- Application (sign up / sign in): https://app.histeeria.com
+- Platform: https://histeeria.com/platform
+- Docs hub: https://histeeria.com/docs
 - Documentation: https://docs.histeeria.com
+- Get started: https://histeeria.com/get-started
+- Changelog: https://histeeria.com/changelog
+- Blog: https://histeeria.com/blog
+- Application (sign up / sign in): https://app.histeeria.com
 - Documentation index (AI crawlers): https://docs.histeeria.com/llms-full.txt
 - Privacy Policy: https://histeeria.com/privacy
 - Terms of Service: https://histeeria.com/terms
@@ -34,7 +38,7 @@ OpenAI, Anthropic, LangChain, LlamaIndex, CrewAI, AutoGen, and custom agents via
 
 1. Create a free account at https://app.histeeria.com
 2. Connect an agent with the Histeeria SDK or REST API.
-3. Send your first decision and view it evaluated inside your workspace.
+3. Send your first decision and view it in your workspace.
 
 ## Contact
 

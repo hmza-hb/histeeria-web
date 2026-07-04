@@ -5,18 +5,18 @@ import { Navigation } from "@/components/landing/navigation";
 import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Platform — Monitor, Evaluate & Improve AI Agents",
+  title: "Platform",
   description:
-    "Explore the Histeeria platform: judgment monitoring, an eight-dimension evaluation engine, agent profiles, alerts and webhooks, analytics, SDKs for JavaScript and Python, a REST API, and integrations for OpenAI, Anthropic, LangChain, and more.",
+    "Explore the Histeeria platform: agent monitoring, evaluations, profiles, alerts, analytics, SDKs for JavaScript and Python, a REST API, and integrations for OpenAI, Anthropic, LangChain, and more.",
   alternates: {
     canonical: "/platform",
   },
   openGraph: {
     type: "website",
     url: "https://histeeria.com/platform",
-    title: "Histeeria Platform — Monitor, Evaluate & Improve AI Agents",
+    title: "Platform | Histeeria",
     description:
-      "Judgment monitoring, an eight-dimension evaluation engine, agent profiles, alerts, analytics, SDKs, and integrations for production AI agents.",
+      "Agent monitoring, evaluations, profiles, alerts, analytics, SDKs, and integrations for AI agents.",
   },
 };
 

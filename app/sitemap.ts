@@ -1,34 +1,48 @@
 import type { MetadataRoute } from "next";
 
-import { SITE_URL } from "@/lib/seo";
+import { APP_URL, DOCS_URL, SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
+  const primaryPages = [
+    { path: "", priority: 1, changeFrequency: "weekly" as const },
+    { path: "/platform", priority: 0.95, changeFrequency: "weekly" as const },
+    { path: "/docs", priority: 0.95, changeFrequency: "weekly" as const },
+    { path: "/get-started", priority: 0.95, changeFrequency: "weekly" as const },
+    { path: "/changelog", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/blog", priority: 0.9, changeFrequency: "weekly" as const },
+  ];
+
+  const legalPages = [
+    { path: "/privacy", priority: 0.2, changeFrequency: "yearly" as const },
+    { path: "/terms", priority: 0.2, changeFrequency: "yearly" as const },
+  ];
+
   return [
-    {
-      url: SITE_URL,
+    ...primaryPages.map(({ path, priority, changeFrequency }) => ({
+      url: `${SITE_URL}${path}`,
       lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
+      changeFrequency,
+      priority,
+    })),
+    {
+      url: DOCS_URL,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
     },
     {
-      url: `${SITE_URL}/platform`,
+      url: APP_URL,
       lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
     },
-    {
-      url: `${SITE_URL}/privacy`,
+    ...legalPages.map(({ path, priority, changeFrequency }) => ({
+      url: `${SITE_URL}${path}`,
       lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${SITE_URL}/terms`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
+      changeFrequency,
+      priority,
+    })),
   ];
 }

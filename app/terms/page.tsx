@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { LegalPageLayout } from "@/components/landing/legal-page-layout";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Histeeria",
+  title: "Terms of Service",
   description:
-    "Terms governing access to and use of the Histeeria website, application, API, and related services.",
+    "Legal terms for using the Histeeria website, application, API, and related services.",
   alternates: {
     canonical: "https://histeeria.com/terms",
   },

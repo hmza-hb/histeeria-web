@@ -3,6 +3,13 @@
 import { socialLinks } from "@/components/landing/social-icons";
 
 const footerLinks = {
+  Site: [
+    { name: "Platform", href: "/platform" },
+    { name: "Docs", href: "/docs" },
+    { name: "Get started", href: "/get-started" },
+    { name: "Changelog", href: "/changelog" },
+    { name: "Blog", href: "/blog" },
+  ],
   Product: [
     { name: "Monitoring", href: "#features" },
     { name: "Evaluations", href: "#how-it-works" },

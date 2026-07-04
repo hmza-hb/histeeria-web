@@ -12,12 +12,11 @@ import { PricingSection } from "@/components/landing/pricing-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 import { JsonLd } from "@/components/seo/json-ld";
-import { faqSchema } from "@/lib/seo";
+import { faqSchema, SITE_DESCRIPTION, SITE_NAME, TAGLINE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Histeeria — The Reliability Layer for Production AI Agents",
-  description:
-    "Monitor, evaluate, alert, and improve your AI agents from one command center. Catch mistakes, measure judgment across eight dimensions, and build agents you can trust.",
+  title: `${SITE_NAME} | ${TAGLINE}`,
+  description: SITE_DESCRIPTION,
   alternates: { canonical: "/" },
 };
 
