@@ -5,8 +5,8 @@ import { socialLinks } from "@/components/landing/social-icons";
 const footerLinks = {
   Site: [
     { name: "Platform", href: "/platform" },
-    { name: "Docs", href: "/docs" },
-    { name: "Get started", href: "/get-started" },
+    { name: "Memory Systems", href: "/memory-systems" },
+    { name: "Docs", href: "https://docs.histeeria.com", external: true },
     { name: "Changelog", href: "/changelog" },
     { name: "Blog", href: "/blog" },
   ],
@@ -27,12 +27,8 @@ const footerLinks = {
     { name: "Research", href: "#" },
     { name: "Careers", href: "#", badge: "Hiring" },
     { name: "Contact", href: "mailto:legal@histeeria.com" },
-  ],
-  Legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Security", href: "#security" },
-  ],
+  ]
+
 };
 
 export function FooterSection() {
@@ -70,7 +66,7 @@ export function FooterSection() {
                 </div>
               </a>
 
-              
+
 
               <p className="text-sm text-white/45 leading-relaxed max-w-md mb-8">
                 Monitor, evaluate, alert, and improve agents before they fail in front of users.
@@ -135,7 +131,7 @@ export function FooterSection() {
           </p>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] font-normal tracking-[0.12em] text-white/50">
-            
+
             <a href="/privacy" className="hover:text-white/60 transition-colors">
               Privacy Policy
             </a>

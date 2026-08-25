@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Platform", href: "/platform" },
+  { name: "Memory Systems", href: "/memory-systems" },
   { name: "Docs", href: "/docs" },
   { name: "Blog", href: "/blog" },
   { name: "Changelog", href: "/changelog" },
@@ -66,8 +67,6 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                target={link.external ? "_blank" : undefined}
-                rel={link.external ? "noopener noreferrer" : undefined}
                 className="text-sm text-white/70 transition-colors duration-300 hover:text-white"
               >
                 {link.name}
@@ -133,8 +132,6 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                target={link.external ? "_blank" : undefined}
-                rel={link.external ? "noopener noreferrer" : undefined}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="border-b border-white/10 pb-4 text-3xl font-display text-white transition-colors hover:text-white/70"
               >

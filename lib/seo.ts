@@ -39,6 +39,7 @@ export const OG_IMAGE = "/assets/og.png";
 /** Primary site navigation — signals Google sitelinks. */
 export const PRIMARY_NAV = [
   { name: "Platform", href: `${SITE_URL}/platform`, path: "/platform" },
+  { name: "Memory Systems", href: `${SITE_URL}/memory-systems`, path: "/memory-systems" },
   { name: "Docs", href: `${SITE_URL}/docs`, path: "/docs" },
   { name: "Get started", href: `${SITE_URL}/get-started`, path: "/get-started" },
   { name: "Changelog", href: `${SITE_URL}/changelog`, path: "/changelog" },
