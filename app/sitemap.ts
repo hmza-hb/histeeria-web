@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const primaryPages = [
     { path: "", priority: 1, changeFrequency: "weekly" as const },
     { path: "/platform", priority: 0.95, changeFrequency: "weekly" as const },
+    { path: "/memory-systems", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/docs", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/get-started", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/changelog", priority: 0.9, changeFrequency: "weekly" as const },

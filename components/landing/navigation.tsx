@@ -26,38 +26,34 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "top-4 left-4 right-4" 
-          : "top-0 left-0 right-0"
-      }`}
-    >
-      <nav 
-        className={`mx-auto transition-all duration-500 ${
-          isScrolled || isMobileMenuOpen
-            ? "bg-black/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] max-w-[1200px]"
-            : "bg-transparent max-w-[1400px]"
+      className={`fixed z-50 transition-all duration-500 ${isScrolled
+        ? "top-4 left-4 right-4"
+        : "top-0 left-0 right-0"
         }`}
-      >
-        <div 
-          className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${
-            isScrolled ? "h-14" : "h-20"
+    >
+      <nav
+        className={`mx-auto transition-all duration-500 ${isScrolled || isMobileMenuOpen
+          ? "bg-black/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] max-w-[1200px]"
+          : "bg-transparent max-w-[1400px]"
           }`}
+      >
+        <div
+          className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${isScrolled ? "h-14" : "h-20"
+            }`}
         >
           {/* Logo */}
           <a href="/" className="flex items-center gap-2.5 group shrink-0">
-            <img 
-              src="/assets/logo-dark.png" 
-              alt="Histeeria Logo" 
-              className={`object-contain transition-all duration-500 ${
-                isScrolled 
-                  ? "w-8 h-8" 
-                  : "w-10 h-10"
-              }`} 
+            <img
+              src="/assets/logo-dark.png"
+              alt="Histeeria Logo"
+              className={`object-contain transition-all duration-500 ${isScrolled
+                ? "w-8 h-8"
+                : "w-10 h-10"
+                }`}
             />
             <div className="flex flex-col">
               <span className={`font-display font-bold tracking-tight transition-all duration-500 leading-none ${isScrolled ? "text-base text-white" : "text-lg text-white"}`}>HISTEERIA</span>
-             
+
             </div>
           </a>
 
@@ -79,13 +75,12 @@ export function Navigation() {
             <Button
               asChild
               size="sm"
-              className={`rounded-full transition-all duration-500 font-semibold cursor-pointer ${
-                isScrolled 
-                  ? "bg-white text-black hover:bg-white/90 px-5 h-9 text-xs" 
-                  : "bg-white text-black hover:bg-white/90 px-6 h-10 text-sm"
-              }`}
+              className={`rounded-full transition-all duration-500 font-semibold cursor-pointer ${isScrolled
+                ? "bg-white text-black hover:bg-white/90 px-5 h-9 text-xs"
+                : "bg-white text-black hover:bg-white/90 px-6 h-10 text-sm"
+                }`}
             >
-              <a href="/get-started">
+              <a href="https://app.histeeria.com" target="_blank">
                 Get started
               </a>
             </Button>
@@ -106,19 +101,18 @@ export function Navigation() {
         </div>
 
       </nav>
-      
+
       {/* Mobile Menu - Full Screen Overlay */}
       <div
-        className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-3xl z-40 transition-all duration-500 ${
-          isMobileMenuOpen 
-            ? "opacity-100 pointer-events-auto" 
-            : "opacity-0 pointer-events-none"
-        }`}
+        className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-3xl z-40 transition-all duration-500 ${isMobileMenuOpen
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+          }`}
         style={{ top: 0 }}
       >
         <div className="flex flex-col h-full px-6 pt-24 pb-8 overflow-y-auto">
           {/* Mobile Close Button in Sidebar top right */}
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(false)}
             className="absolute top-6 right-6 p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white transition-colors"
             aria-label="Close menu"
@@ -139,15 +133,15 @@ export function Navigation() {
               </a>
             ))}
           </div>
-          
+
           {/* Bottom CTA */}
           <div className="pt-6 border-t border-white/10 mt-auto">
-            <Button 
+            <Button
               asChild
               className="w-full bg-white text-black hover:bg-white/90 rounded-full h-14 text-base cursor-pointer font-bold"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <a href="/get-started">
+              <a href="https://app.histeeria.com" target="_blank">
                 Get started
               </a>
             </Button>

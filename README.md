@@ -188,7 +188,7 @@ Histeeria is the throughline of everything — the question he has been asking s
 ## Links
 
 - Website: [histeeria.com](https://histeeria.com)
-- LinkedIn: [linkedin.com/company/histeeria-edu](https://linkedin.com/company/histeeria-edu)
+- LinkedIn: [linkedin.com/company/histeeria-imj](https://www.linkedin.com/company/histeeria-imj)
 
 ---
 
