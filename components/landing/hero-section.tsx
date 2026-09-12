@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
-const words = ["monitor", "evaluate", "alert", "improve"];
+const words = ["monitor", "evaluate", "grow", "improve"];
 
 function BlurWord({ word, trigger }: { word: string; trigger: number }) {
   const letters = word.split("");
@@ -175,7 +175,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-white/60">
             <span className="w-8 h-px bg-white/30" />
-            Reliability layer for production AI agents
+            Cognitive Infrastructure for Production AI Systems
           </span>
         </div>
         
@@ -192,7 +192,7 @@ export function HeroSection() {
               <span className="relative inline-block">
                 <BlurWord word={words[wordIndex]} trigger={wordIndex} />
               </span>
-              <span className="block">AI agents</span>
+              <span className="block">Intelligent Systems</span>
             </span>
           </h1>
         </div>
@@ -201,7 +201,7 @@ export function HeroSection() {
         <p className={`text-lg text-white/70 max-w-[580px] mb-10 leading-relaxed transition-all duration-1000 delay-150 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}>
-          Monitor, evaluate, alert, and improve your AI agents from one command center. <br /> <br />Grow the tree of your agent's judgement abilities.
+          Monitor, evaluate, and improve your AI systems. <br /> <br />And grow the tree of your agent's judgement abilities and experience graph.
         </p>
 
         {/* CTA Buttons */}
@@ -209,10 +209,10 @@ export function HeroSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}>
           <Button asChild size="lg" className="rounded-full bg-white hover:bg-white/90 text-black px-8 h-12 font-semibold cursor-pointer">
-            <a href="https://app.histeeria.com/login">Start monitoring</a>
+            <a href="https://app.histeeria.com/login">Start evaluations</a>
           </Button>
           <Button asChild variant="outline" size="lg" className="rounded-full border-white/20 text-white hover:bg-white/5 px-8 h-12 font-semibold cursor-pointer">
-            <a href="#how-it-works">View evaluation demo</a>
+            <a href="/memory-systems">View memory demo</a>
           </Button>
         </div>
         </div>
@@ -228,7 +228,7 @@ export function HeroSection() {
           {[
             { value: "Monitor", label: "24/7 mistake monitoring" },
             { value: "Evaluate", label: "Your agent's decision" },
-            { value: "Educate", label: "Your agent's Judgement" },
+            { value: "Grow", label: "Your system's Judgement" },
           ].map((stat) => (
             <div key={stat.label} className="flex flex-col gap-2">
               <span className="text-3xl lg:text-4xl font-display text-white">{stat.value}</span>
